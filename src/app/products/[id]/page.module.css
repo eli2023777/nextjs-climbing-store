@@ -1,0 +1,40 @@
+.container {
+    padding: 30vh;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.backButton {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    background-color: blue;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    width: 6vw;
+    text-align: center;
+}
+
+.backButton:hover {
+    background-color: darkblue;
+    cursor: pointer;
+}
+
+.productImg {
+    width: 30vw;
+}
+
+.flexPriceAndCart {
+    display: flex;
+    gap: 2vw;
+    margin: 2vw;
+}
+
+.description {
+    width: 60vw;
+}

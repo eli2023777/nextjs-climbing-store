@@ -1,0 +1,23 @@
+.container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.productList {
+    list-style: none;
+    padding: 0;
+}
+
+.productItem {
+    margin: 10px 0;
+}
+
+.productLink {
+    text-decoration: none;
+    color: blue;
+    font-weight: bold;
+}
+
+.productLink:hover {
+    text-decoration: underline;
+}
