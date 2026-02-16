@@ -49,7 +49,7 @@ const Cart = () => {
 
 
             <ul className={styles.productsGrid} >
-                {products.map((product) => {
+                {products?.map((product) => {
                     if (!product) return null;
                     return (
                         <li key={product._id} className={styles.productItem}>
