@@ -6,7 +6,6 @@ import styles from './page.module.css';
 import ProductsArr from '@/hooks/useProductsArr';
 import initialProductsArr from '@/helpers/initialProductsArr';
 import CartBtn from '@/components/CartBtn';
-import { useState } from 'react';
 
 
 
