@@ -1,11 +1,12 @@
 // app/products/[id]/page.js
 "use client";
 
-import { useParams, useRouter, useEffect } from 'next/navigation';
+import { useParams, useRouter, useEffect, useState } from 'next/navigation';
 import styles from './page.module.css';
 import ProductsArr from '@/hooks/useProductsArr';
 import initialProductsArr from '@/helpers/initialProductsArr';
 import CartBtn from '@/components/CartBtn';
+import { useState } from 'react';
 
 
 
@@ -17,15 +18,15 @@ const ProductDetailPage = () => {
     const { id } = useParams();
     const router = useRouter();
 
+    const [products, setProducts] = useState([]);
 
-    const saved = [];
 
     useEffect(() => {
-        saved = localStorage.getItem('products');
+        const saved = localStorage.getItem('products');
+        setProducts(saved ? JSON.parse(saved) : initialProductsArr);
     }, []);
 
 
-    const products = saved ? JSON.parse(saved) : initialProductsArr;
 
 
 
