@@ -34,7 +34,7 @@ export default function ProductsPage() {
             </Link >
 
             <ul className={styles.productLink}>
-                {products.map((product) => (
+                {products?.map((product) => (
                     <li key={product._id} className={styles.productItem}>
                         <Link href={`/products/${product._id}`} className={styles.productLink}>
                             {product.name}
