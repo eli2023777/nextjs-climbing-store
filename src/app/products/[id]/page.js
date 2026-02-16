@@ -8,9 +8,18 @@ import initialProductsArr from '@/helpers/initialProductsArr';
 import CartBtn from '@/components/CartBtn';
 
 
+export async function generateStaticParams() {
+    const products = await fetch("https://fakestoreapi.com/products")
+        .then(res => res.json());
 
+    return products.map(product => ({
+        id: product.id.toString(),
+    }));
+}
 
 const ProductDetailPage = () => {
+
+
 
     const { id } = useParams();
     const router = useRouter();
