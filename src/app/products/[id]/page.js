@@ -1,7 +1,7 @@
 // app/products/[id]/page.js
 "use client";
 
-import { useParams, useRouter } from 'next/navigation';
+import { useParams, useRouter, useEffect } from 'next/navigation';
 import styles from './page.module.css';
 import ProductsArr from '@/hooks/useProductsArr';
 import initialProductsArr from '@/helpers/initialProductsArr';
@@ -18,7 +18,13 @@ const ProductDetailPage = () => {
     const router = useRouter();
 
 
-    const saved = localStorage.getItem('products');
+    const saved = [];
+
+    useEffect(() => {
+        saved = localStorage.getItem('products');
+    }, []);
+
+
     const products = saved ? JSON.parse(saved) : initialProductsArr;
 
 

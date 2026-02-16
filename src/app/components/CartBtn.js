@@ -14,20 +14,30 @@ import initialProductsArr from '@/helpers/initialProductsArr';
 
 const CartBtn = ({ id }) => {
 
-    const saved = localStorage.getItem('products');
-    const products = saved ? JSON.parse(saved) : initialProductsArr;
-    console.log('products: ', products);
+    const [products, setProducts] = useState();
+    const [cartProducts, setCartProducts] = useState();
 
 
-    const cartProducts = JSON.parse(localStorage.getItem('cartProducts'));
+    useEffect(() => {
+        const saved = localStorage.getItem('products');
+        setProducts(saved ? JSON.parse(saved) : initialProductsArr);
+        setCartProducts(JSON.parse(localStorage.getItem('cartProducts')));
+    }, []);
+
+    // const saved = localStorage.getItem('products');
+    // const products = saved ? JSON.parse(saved) : initialProductsArr;
+    // console.log('products: ', products);
+
+
+    // const cartProducts = JSON.parse(localStorage.getItem('cartProducts'));
 
 
     // Search product by id
-    const product = products.find((product) => product?._id === id);
+    const product = products?.find((product) => product?._id === id);
 
 
     const [isProductInCart, setIsProductInCart] = useState(
-        Boolean(cartProducts.find((product) => product?._id === id))
+        Boolean(cartProducts?.find((product) => product?._id === id))
     );
 
     const { addProductToCart, deleteCartProduct } = useCartProductsArr();

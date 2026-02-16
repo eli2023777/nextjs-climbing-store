@@ -6,11 +6,12 @@ import { useState, useEffect } from "react";
 const useCartProductsArr = () => {
 
 
-    const [cartProducts, setCartProducts] = useState(
-        () => {
-            const saved = localStorage.getItem('cartProducts');
-            return saved ? JSON.parse(saved) : []
-        });
+    const [cartProducts, setCartProducts] = useState([]
+        // () => {
+        //     const saved = localStorage.getItem('cartProducts');
+        //     return saved ? JSON.parse(saved) : []
+        // }
+    );
 
     // Add the new product with Sequential ID
     const addProductToCart = (newCartProduct) => {
@@ -22,6 +23,11 @@ const useCartProductsArr = () => {
         setCartProducts(prev => prev.filter(cartProduct => cartProduct?._id !== cartProductToDelete?._id));
     };
 
+
+    useEffect(() => {
+        const saved = localStorage.getItem('cartProducts');
+        setCartProducts(saved ? JSON.parse(saved) : []);
+    }, []);
 
     useEffect(() => {
         localStorage.setItem('cartProducts', JSON.stringify(cartProducts));

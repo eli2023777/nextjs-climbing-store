@@ -4,7 +4,7 @@
 import Image from "next/image";
 import styles from "@/page.module.css";
 import Link from "next/link";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import initialProductsArr from "@/helpers/initialProductsArr";
 import Header from "@/components/Header";
 import CartBtn from "@/components/CartBtn";
@@ -15,9 +15,15 @@ import CartBtn from "@/components/CartBtn";
 export default function Home() {
 
   const [products, setProducts] = useState(() => {
-    const saved = localStorage.getItem('products');
-    return saved ? JSON.parse(saved) : initialProductsArr
+    []
+    // const saved = localStorage.getItem('products');
+    // return saved ? JSON.parse(saved) : initialProductsArr
   });
+
+  useEffect(() => {
+    const saved = localStorage.getItem('products');
+    setProducts(saved ? JSON.parse(saved) : initialProductsArr);
+  }, []);
 
   return (
 
@@ -35,7 +41,7 @@ export default function Home() {
       {/* ---- */}
 
       <ul className={styles.productsGrid} >
-        {products.map((product) => (
+        {products?.map((product) => (
           <li key={product._id} className={styles.productItem}>
             <Link href={`/products/${product._id}`} className={styles.productLink}>
               <img className={styles.productImg}

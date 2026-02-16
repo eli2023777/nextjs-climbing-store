@@ -16,9 +16,14 @@ const Cart = () => {
 
 
     const [products, setProducts] = useState(() => {
-        const saved = localStorage.getItem('cartProducts');
-        return saved ? JSON.parse(saved) : []
+        // const saved = localStorage.getItem('cartProducts');
+        // return saved ? JSON.parse(saved) : []
     });
+
+    useEffect(() => {
+        const saved = localStorage.getItem('cartProducts');
+        setProducts(saved ? JSON.parse(saved) : initialProductsArr);
+    }, []);
 
     const { deleteCartProduct } = useCartProductsArr();
 

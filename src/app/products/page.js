@@ -4,16 +4,22 @@
 import Link from 'next/link';
 import styles from './page.module.css';
 import useProductsArr from '@/hooks/useProductsArr';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import initialProductsArr from '@/helpers/initialProductsArr';
 
 export default function ProductsPage() {
 
 
     const [products, setProducts] = useState(() => {
-        const saved = localStorage.getItem('products');
-        return saved ? JSON.parse(saved) : initialProductsArr
+        []
+        // const saved = localStorage.getItem('products');
+        // return saved ? JSON.parse(saved) : initialProductsArr
     });
+
+    useEffect(() => {
+        const saved = localStorage.getItem('products');
+        setProducts(saved ? JSON.parse(saved) : initialProductsArr);
+    }, []);
 
 
 
