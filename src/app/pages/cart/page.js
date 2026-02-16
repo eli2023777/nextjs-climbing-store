@@ -16,6 +16,7 @@ const Cart = () => {
 
 
     const [products, setProducts] = useState(() => {
+        []
         // const saved = localStorage.getItem('cartProducts');
         // return saved ? JSON.parse(saved) : []
     });
