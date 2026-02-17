@@ -1,40 +1,3 @@
-.layout {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin: auto;
-  justify-content: space-around;
-  padding: 2vh;
-  background-color: #ffffffde;
-  position: fixed;
-  width: 100vw;
-  position: fixed;
-  top: 0;
-}
-
-.layout a,
-.productLink {
-  text-decoration: none !important;
-  color: #000;
-}
-
-
-.layout a:hover {
-  color: #8c8c8c;
-}
-
-
-.logo {
-  display: flex;
-  flex-direction: column;
-  gap: 1vh;
-}
-
-.logo h1,
-.logo p {
-  margin: 0;
-}
-
 /* 
 .page {
   --gray-rgb: 0, 0, 0;
@@ -63,6 +26,11 @@
 .productItem {
   text-align: center;
   list-style: none;
+  color: #000;
+}
+
+.productLink {
+  text-decoration: none !important;
   color: #000;
 }
 

@@ -40,11 +40,51 @@ body::before {
   z-index: -1;
 }
 
+.layout {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  justify-content: space-around;
+  padding: 2vh;
+  background-color: #ffffffde;
+  position: fixed;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+}
+
+.layout a {
+  text-decoration: none !important;
+  color: #000;
+}
+
+
+.layout a:hover {
+  color: #8c8c8c;
+}
+
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+
+.logo h1,
+.logo p {
+  margin: 0;
+}
+
 
 
 
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+
+  .logo {
+    filter: invert();
   }
 }

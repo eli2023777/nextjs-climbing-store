@@ -1,8 +1,9 @@
 
-
 'use client';
+
+
 import Link from "next/link";
-import styles from "./page.module.css";
+import "./globals.css";
 import { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaShoppingCart } from "react-icons/fa";
@@ -27,10 +28,10 @@ export default function ProductsLayout({ children }) {
     <>
       <html>
         <body>
-          <header className={styles.layout}>
+          <header className='layout'>
 
 
-            <Link className={styles.logo} href="/"
+            <Link className='logo' href="/"
               onClick={() => setIsActiveBtn(UI_ACTIVE_BUTTONS.HOME)}
             >
               <h1>HoldIt</h1>
