@@ -1,7 +1,9 @@
 // app/products/[id]/page.js
 "use client";
 
-import { useParams, useRouter, useEffect, useState } from 'next/navigation';
+import { useState, useEffect } from "react";
+
+import { useParams, useRouter } from 'next/navigation';
 import styles from './page.module.css';
 import ProductsArr from '@/hooks/useProductsArr';
 import initialProductsArr from '@/helpers/initialProductsArr';
